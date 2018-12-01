@@ -1,14 +1,23 @@
-function countUniqueValues(arr) {
-  if (arr.length === 0) return 0;
-  let i = 0;
+// Count unique values in sorted array
+// multiple pointers pattern
+// time complexity: O(N) linear
 
+function countUniqueValues(arr) {
+  // check special case empty array
+  if (arr.length === 0) return 0;
+  // initial first pointer
+  let i = 0;
+  // set second pointer and iterate
   for (let j = 1; j < arr.length; j++) {
+    // check if values are same
     if (arr[i] !== arr[j]) {
+      // not increment i
       i++;
+      // place unique value in tracking section
       arr[i] = arr[j];
     }
   }
-
+  // number of unique values equal first pointer + 1
   return i + 1;
 }
 
