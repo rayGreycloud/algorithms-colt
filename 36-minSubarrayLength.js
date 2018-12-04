@@ -11,6 +11,7 @@ function minSubarrayLength(arr, targetValue) {
 
   // move to middle from both ends of array
   while (left < arr.length) {
+    console.log(`minLength inside while = ${minLength}`);
     // if window sum < target, move window to right
     if (windowTotal < targetValue && right < arr.length) {
       windowTotal += arr[right];
@@ -18,6 +19,7 @@ function minSubarrayLength(arr, targetValue) {
     }
     // set minimal length and shrink window
     else if (windowTotal >= targetValue) {
+      console.log(`minLength inside elseif = ${minLength}`);
       minLength = Math.min(minLength, right - left);
       windowTotal -= arr[left];
       left++;
@@ -27,8 +29,8 @@ function minSubarrayLength(arr, targetValue) {
       break;
     }
   }
-
-  return minLength;
+  console.log(`minLength before return = ${minLength}`);
+  return minLength === Infinity ? 0 : minLength;
 }
 
 console.log(minSubarrayLength([2, 3, 1, 2, 4, 3], 7)); // 2
