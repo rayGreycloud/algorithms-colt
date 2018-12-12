@@ -8,9 +8,11 @@ function selectionSort(array) {
       }
     }
     // Swap number positions
-    let temp = array[i];
-    array[i] = array[indexLowest];
-    array[indexLowest] = temp;
+    if (i !== indexLowest) {
+      let temp = array[i];
+      array[i] = array[indexLowest];
+      array[indexLowest] = temp;
+    }
   }
   return array;
 }
