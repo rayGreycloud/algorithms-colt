@@ -1,6 +1,6 @@
 // Divide & Conquer
 function binarySearch(sortedArray, targetValue) {
-  let leftPointer = sortedArray[0];
+  let leftPointer = 0;
   let rightPointer = sortedArray.length - 1;
   let middle = Math.floor((leftPointer + rightPointer) / 2);
 
@@ -52,6 +52,9 @@ testArray = [
 ];
 testTarget = 18;
 console.log(binarySearch(testArray, testTarget)); // 5
+
+testTarget = 10;
+console.log(binarySearch(testArray, testTarget)); // 2
 
 testTarget = 95;
 console.log(binarySearch(testArray, testTarget)); // 16
