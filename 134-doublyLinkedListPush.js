@@ -28,3 +28,7 @@ class DoublyLinkedList {
     return this;
   }
 }
+
+var doublyLinkedList = new DoublyLinkedList();
+console.log(doublyLinkedList.push('alpha'));
+console.log(doublyLinkedList.push('beta'));
